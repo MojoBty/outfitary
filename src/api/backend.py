@@ -17,7 +17,7 @@ client:str = OpenAI(api_key=OpenAI_Key)
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/process', methods=['POST', 'GET'])
+@app.route('/api/process', methods=['POST', 'GET'])
 @cross_origin()
 def process():
     data = request.json  # Get JSON data sent from Next.js
@@ -78,7 +78,7 @@ def process():
 
     return None
 
-@app.route('/update', methods=['POST', 'GET'])
+@app.route('/api/update', methods=['POST', 'GET'])
 @cross_origin()
 def update():
     data = request.json  # Get JSON data sent from Next.js
