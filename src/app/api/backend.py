@@ -9,13 +9,12 @@ from werkzeug.utils import secure_filename
 
 load_dotenv()
 
-client = OpenAI(api_key="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")
+OpenAI_Key:str = os.getenv('NEXT_PUBLIC_OPENAI_KEY')
+client:str = OpenAI(api_key=OpenAI_Key)
 
 
 app = Flask(__name__)
 CORS(app)
-
-CLERK_JWT_SECRET = 'u7J4pwVVzxjZ/3aJfRqb+SRoTVoCTVvlKWxCmyycLIDqlvT36tL1SIl9WjPD2YAoeKfJ8jNPBwPrY+pA7L0a3Q=='
 
 @app.route('/process', methods=['POST', 'GET'])
 @cross_origin()
