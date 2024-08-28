@@ -115,7 +115,7 @@ const ClothingItemCarousel = (props) => {
     console.log(itemData)
 
     try {
-      const response = await axios.post('http://127.0.0.1:8080/update', {
+      const response = await axios.post('https://outfitaryapi-285786456691.us-west1.run.app/api/update', {
         type: props.type,
         description: itemData[0].description
       },

@@ -62,7 +62,7 @@ export default function Create() {
     })
 
     try {
-      const response = await axios.post('https://outfitary.vercel.app/api/process', {
+      const response = await axios.post('https://outfitaryapi-285786456691.us-west1.run.app/api/process', {
         type: values.type,
         description: values.description
       },
