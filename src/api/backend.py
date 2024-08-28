@@ -11,7 +11,7 @@ load_dotenv()
 
 
 
-OpenAI_Key:str = os.getenv('NEXT_PUBLIC_OPENAI_KEY')
+OpenAI_Key:str = os.getenv('OPENAI_KEY')
 client:str = OpenAI(api_key=OpenAI_Key)
 
 app = Flask(__name__)
