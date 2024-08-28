@@ -9,9 +9,10 @@ from werkzeug.utils import secure_filename
 
 load_dotenv()
 
+
+
 OpenAI_Key:str = os.getenv('NEXT_PUBLIC_OPENAI_KEY')
 client:str = OpenAI(api_key=OpenAI_Key)
-
 
 app = Flask(__name__)
 CORS(app)
