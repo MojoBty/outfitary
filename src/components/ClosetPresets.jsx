@@ -1,12 +1,12 @@
 'use client'
 import { useSession, useUser } from '@clerk/nextjs';
 import React, { useState, useEffect } from 'react'
-import { useSupabase } from '@/utils/supabase/client';
+import { useSupabase } from '../utils/supabase/client';
 import { Button } from './ui/button';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
-import { useCloset } from '@/context/ClosetContext';
+import { useCloset } from '../context/ClosetContext';
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -23,8 +23,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+} from "../components/ui/form"
+import { Input } from "../components/ui/input"
 
 const formSchema = z.object({
   title: z.string().min(1).max(40, {

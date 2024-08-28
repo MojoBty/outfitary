@@ -11,10 +11,10 @@ import { useSession } from '@clerk/nextjs'
 import axios from 'axios';
 import { Loader2 } from "lucide-react"
 
-import { useSupabase } from "@/utils/supabase/client";
+import { useSupabase } from "../../utils/supabase/client";
 
 
-import { Button } from "@/components/ui/button"
+import { Button } from "../../components/ui/button"
 import {
   Form,
   FormControl,
@@ -23,15 +23,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
+} from "../../components/ui/form"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
+} from "../../components/ui/select"
+import { Input } from "../../components/ui/input"
 
 const formSchema = z.object({
   type: z.string(),

@@ -3,11 +3,11 @@
 import React from 'react'
 import { useState } from 'react'
 
-import { useCloset } from '@/context/ClosetContext';
+import { useCloset } from '../context/ClosetContext';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ import axios from 'axios';
 
 import { useAuth } from '@clerk/nextjs'
 import { useSession, useUser } from '@clerk/nextjs'
-import { useSupabase } from "@/utils/supabase/client";
+import { useSupabase } from "../utils/supabase/client";
 import { Loader2 } from 'lucide-react';
 
 const ClothingItemCarousel = (props) => {

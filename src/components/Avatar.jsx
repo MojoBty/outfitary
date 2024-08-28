@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useCloset } from '@/context/ClosetContext';
+import { useCloset } from '../context/ClosetContext';
 import Image from 'next/image';
 
 const Avatar = () => {

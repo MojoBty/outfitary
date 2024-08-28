@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import ClothingProvider from "@/context/ClosetContext"
+import ClothingProvider from "../context/ClosetContext"
 
 import {
   ClerkProvider,
@@ -9,7 +9,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
-import { ClerkSupabaseProvider } from "@/utils/supabase/client";
+import { ClerkSupabaseProvider } from "../utils/supabase/client";
 
 
 const montserrat = Montserrat({ subsets: ["latin"] });

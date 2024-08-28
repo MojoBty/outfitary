@@ -1,9 +1,9 @@
 'use client'
-import AvatarSelectionPage from "@/components/AvatarSelectionPage";
+import AvatarSelectionPage from "../components/AvatarSelectionPage";
 import Image from "next/image";
 import { useSession } from "@clerk/nextjs";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "../components/ui/button"
 
 
 export default function Home() {

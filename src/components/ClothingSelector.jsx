@@ -2,12 +2,12 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import ClothingItemCarousel from './ClothingItemCarousel'
 import { useSession, useUser } from '@clerk/nextjs';
-import { useSupabase } from '@/utils/supabase/client';
+import { useSupabase } from '../utils/supabase/client';
 
-import { useCloset } from "@/context/ClosetContext";
+import { useCloset } from "../context/ClosetContext";
 
 const ClothingSelector = () => {
   const { setSelectedTop, setSelectedBottoms, setSelectedShoes, setSelectedHeadwear, selectedTop, selectedBottoms, selectedShoes, selectedHeadwear, setSelectedIndex } = useCloset();
