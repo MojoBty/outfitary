@@ -62,7 +62,7 @@ export default function Create() {
     })
 
     try {
-      const response = await axios.post('http://127.0.0.1:8080/process', {
+      const response = await axios.post('https://outfitary.vercel.app/api/process', {
         type: values.type,
         description: values.description
       },
