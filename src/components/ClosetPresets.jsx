@@ -184,7 +184,7 @@ const ClosetPresets = () => {
 
     <div className='flex flex-col'>
       
-      <h1 className='font-semibold text-[2rem] mt-[1.3rem]'>
+      <h1 className='flex lg:justify-normal justify-center font-semibold text-[2rem] mt-[1.3rem]'>
         Outfit Presets
       </h1>
       {outfits.length === 0 ? (
@@ -196,7 +196,7 @@ const ClosetPresets = () => {
           <Splide options={splideOptions}>
             {Array.from({ length: Math.ceil(outfits.length / 3) }).map((_, pageIndex) => (
               <SplideSlide className='flex py-8 justify-items-center justify-center items-center'  key={pageIndex}>
-                <div className={outfits.length > 3 ? `flex gap-x-12 items-center`: 'flex gap-x-12 items-center px-[8.6rem]'}>
+                <div className={outfits.length > 3 ? `flex gap-x-12 items-center`: 'flex gap-x-12 items-center px-[6.5rem]'}>
                   {outfits.slice(pageIndex * 3, pageIndex * 3 + 3).map((card, cardIndex) => (
                     <div key={cardIndex} className={`flex text-[.9rem] items-center justify-between font-medium bg-gray-100 p-6 rounded-lg shadow-md w-[200px] ${outfitIndexes.page === pageIndex && outfitIndexes.index === cardIndex ? 'border-2 border-blue-500' : 'border'}`} onClick={() => setCurrentOutfit(pageIndex, cardIndex, card)}> 
                       {card.title}
@@ -211,7 +211,7 @@ const ClosetPresets = () => {
         </Splide>
       </div>
       )}
-      <div className='pt-4'>
+      <div className='flex lg:justify-normal justify-center pt-4'>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField

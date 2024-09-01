@@ -8,8 +8,8 @@ const Avatar = () => {
   const { selectedTop, selectedBottoms, selectedShoes, selectedHeadwear } = useCloset();
 
   return (
-    <div className='min-w-[25rem]'>
-      <div className='font-semibold text-[2rem]'>
+    <div className='flex flex-col min-w-[25rem]'>
+      <div className='flex lg:justify-normal justify-center font-semibold text-[2rem]'>
         <h1>Outfit</h1>
       </div>
       <div className='flex flex-col items-center justify-center '>

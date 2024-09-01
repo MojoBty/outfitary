@@ -90,15 +90,18 @@ const ClothingSelector = () => {
   }, [session, user])
 
   return (
-    <div className='w-[100%] lg:w-auto min-w-[60rem]'>
+    <div className='flex flex-col w-[100%] lg:w-auto min-w-[60rem]'>
 
-      <Tabs defaultValue="tops" className="w-[100%] h-[100%]">
-        <TabsList>
+      <Tabs defaultValue="tops" className="h-[100%] flex flex-col">
+        <div className='flex lg:justify-normal justify-center'>
+        <TabsList className='w-[22rem]'>
           <TabsTrigger value="tops" >Tops</TabsTrigger>
           <TabsTrigger value="bottoms" >Bottoms</TabsTrigger>
           <TabsTrigger value="shoes" >Shoes</TabsTrigger>
           <TabsTrigger value="headwear" >Headwear</TabsTrigger>
         </TabsList>
+        </div>
+       
         <TabsContent className="flex items-center" value="tops">
           <ClothingItemCarousel type="tops" setClothingItems={setTops}  data={tops} reloadItems={loadItems}/>
         </TabsContent>

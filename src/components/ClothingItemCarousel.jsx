@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 import { useCloset } from '../context/ClosetContext';
@@ -25,6 +25,33 @@ const ClothingItemCarousel = (props) => {
 
   const [loadingStates, setLoadingStates] = useState({});
 
+  const [carouselNumber, setCarouselNumber] = useState(2)
+  const [isArrows, setIsArrows] = useState(true)
+
+  useEffect(() => {
+    const getViewportCategory = () => {
+      const width = window.innerWidth;
+      if (width > 1400) {
+        setCarouselNumber(2) 
+        setIsArrows(true)
+      }
+      else {
+        setCarouselNumber(1)
+        setIsArrows(false)
+      }
+    }
+
+    const handleResize = () => {
+      getViewportCategory()
+    }
+    getViewportCategory()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+    
+  })
+
   const { userId} = useAuth()
   const clothingItems = props.data
 
@@ -33,8 +60,8 @@ const ClothingItemCarousel = (props) => {
   const splideOptions = {
     perPage: 1,  
     pagination: true,
-    arrows: true,
-    
+    arrows: isArrows,
+    width:'80rem',
     gap: '0rem',
     breakpoints: {
       600: {
@@ -146,12 +173,12 @@ const ClothingItemCarousel = (props) => {
 
   
   return (
-    <div className='flex flex-col justify-center items-center w-[100%]'>
+    <div className='flex flex-col w-[100%]'>
       <Splide options={splideOptions}>
-        {Array.from({ length: Math.ceil(clothingItems.length / 2) }).map((_, pageIndex) => (
+        {Array.from({ length: Math.ceil(clothingItems.length / carouselNumber) }).map((_, pageIndex) => (
           <SplideSlide key={pageIndex}>
-            <div className={clothingItems.length > 2 ? `flex py-8 justify-items-center justify-center gap-24 items-center` : `flex py-8 px-[8.6rem] justify-items-center justify-center gap-24 items-center`}> 
-              {clothingItems.slice(pageIndex * 2, pageIndex * 2 + 2).map((card, cardIndex) => (
+            <div className={`flex py-8 justify-items-center justify-center gap-24 items-center`}> 
+              {clothingItems.slice(pageIndex * carouselNumber, pageIndex * carouselNumber + carouselNumber).map((card, cardIndex) => (
                 <div key={cardIndex} className={`bg-white p-6 rounded-lg shadow-md w-[275px] h-[340px] ${selectedIndexes[props.type].page === pageIndex && selectedIndexes[props.type].index === cardIndex ? 'border-2 border-blue-500' : 'border'}`} onClick={() => handleSelect(card.title, card.image_link, pageIndex, card.id, cardIndex)}>
                   <div className='flex justify-between'>
                     
