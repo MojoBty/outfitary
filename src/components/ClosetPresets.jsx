@@ -188,7 +188,7 @@ const ClosetPresets = () => {
         Outfit Presets
       </h1>
       {outfits.length === 0 ? (
-        <div className='font-medium text-[1.15rem]'>
+        <div className='flex lg:justify-normal justify-center font-medium text-[1.15rem]'>
           You currently have no outfits saved.
         </div>
       ) : (
